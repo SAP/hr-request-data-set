@@ -1,0 +1,34 @@
+.vscode/
+venv/
+linux_venv/
+venv_class/
+gen_cache/
+tests/
+.gitignore
+*__pycache__*
+outputs/
+multirun/
+ticket_generation/output/
+ticket_generation/data/enron_mail/maildir/*
+ticket_generation/data/20_newsgroups/*
+/ticket_generation/data/amazon_reviews
+/ticket_generation/data/reddit_comments
+/ticket_generation/data/nips_papers
+/ticket_generation/data/enwiki-word-freq-2022-08-29.csv
+/ticket_generation/data/enwiki-word-freq-2022-08-29.txt
+/ticket_generation/data/survey_texts_entities
+/ticket_generation/data/survey_texts_entities_v2
+/ticket_generation/data/survey_texts_entities_v3
+# use_cases/ticket_summarization/output/*
+# use_cases/ticket_classification/output/*
+util/spacy_NER/output/*
+util/spacy_NER/data/*
+ticket_generation/src/text_generator/bert_topic_datasets/data
+logs/*
+/use_cases/ticket_ner/output/model-best/*
+/use_cases/ticket_ner/output/model-last/*
+/use_cases/ticket_classification/model/model_fasttext.bin
+/use_cases/ticket_classification/model/model_BERT.bin
+/use_cases/ticket_classification/data/*
+/use_cases/ticket_ner_not_classical/data/*
+.git

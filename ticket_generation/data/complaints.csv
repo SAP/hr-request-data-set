@@ -1,0 +1,16 @@
+Complaint_title,to_who,complaint
+Harassment,colleague,I was harassed by a colleague
+Discrimination gender,colleague,I was discriminated becuase of my gender by a colleague
+Discrimination age,colleague,I was discriminated becuase of my age by a colleague
+Discrimination race,colleague,I was discriminated becuase of my race by a colleague
+Discrimination disability,colleague,I was discriminated becuase of my disability by a colleague
+Discrimination religion,colleague,I was discriminated becuase of my religion by a colleague
+Discrimination nationality,colleague,I was discriminated becuase of my nationality by a colleague
+Bad hygiene,colleague,a colleague has bad hygene
+Feeling unsafe,colleague,I feel unsafe working with one of my colleagues
+Illegal activity,colleague,I think a colleague could be doing illegal activities
+Toxic environment,colleague,a colleague is creating a toxic work environment
+Ambiguous roles,superior,the roles in the team are not well defined
+Playing favourite,superior,my boss is playing favourites with a colleague
+Work life,superior,my boss is making me work way beyond the working hours
+Career advancement,superior,I don't see how my career can advance

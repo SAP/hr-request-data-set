@@ -1,0 +1,61 @@
+{
+  "0": ["a personal reason"],
+  "1": [
+    "MRSA",
+    "Septicemia",
+    "an infectious disease",
+    "a parasitic disease",
+    "viral hepatitis"
+  ],
+  "2": ["a malignant neoplasm of prostate"],
+  "3": ["anemia"],
+  "4": [
+    "Hyponatremia",
+    "Hypokalemia",
+    "Diabetes mellitis",
+    "Hypoglycemia",
+    "Hypothyroidism",
+    "Hyperlipidemia"
+  ],
+  "5": ["Schizophrenia", "bipolar disorder", "depression"],
+  "6": ["Alzheimer's disease"],
+  "7": ["Hordeolum"],
+  "8": ["Acute actinic", "Otosclerosis"],
+  "9": [
+    "a congestive heart failure",
+    "Atrial fibrillation",
+    "Coronary atherosclerosis",
+    "Pulmonary embolism",
+    "Arthritis"
+  ],
+  "10": ["a cold", "an acute bronchitis", "a chronic sinusitis"],
+  "11": ["an acute pancreatitis", "constipation", "Hepatitis"],
+  "12": ["Cellulitis"],
+  "13": [
+    "Osteoporosis",
+    "Rheumatoid arthritis",
+    "Myalgia",
+    "Osteoporosis",
+    "Osteomyelitis"
+  ],
+  "14": [
+    "Renal insufficiency",
+    "an Urinary Tract Infection",
+    "Renal failure",
+    "chronic kidney disease"
+  ],
+  "15": ["a spontaneous abortion", "placental disorders"],
+  "16": ["a disease of my newborn"],
+  "17": ["Urticaria", "Cellulitis", "acute lymphadenitis"],
+  "18": ["Abdominal pain", "Diarrhea", "a seizure", "fever"],
+  "19": ["a fracture"],
+  "20": ["a car accident", "a bruisure"],
+  "21": ["the use of long-term meds"],
+  "22": ["a follow-up"],
+  "23": ["a medical consultation"],
+  "24": ["a blood donation"],
+  "25": ["a laboratory examination"],
+  "26": ["a personal reason"],
+  "27": ["a physiotherapy visit"],
+  "28": ["a dental consultation"]
+}

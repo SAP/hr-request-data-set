@@ -1,0 +1,274 @@
+{
+  "initial_info": [
+    "From: ${email} \n",
+    "To: ${company_email} \n",
+    "First name: ${first_name} \n",
+    "Last name: ${last_name} \n",
+    "Company: ${company} \n",
+    "Date: ${ticket_date} \n",
+    "Ticket category: ${category} \n",
+    "Ticket sub-category: ${sub_category} \n"
+  ],
+  "tickets": {
+    "Ask information": {
+      "Administrative info": {
+        "implemented": false,
+        "output_folder": "",
+        "variables": ["type_of_info", "info"],
+        "subject": "Subject: Information request about ${info} \n",
+        "additional_info": [],
+        "templates": [
+          "Dear Sir/Madame, my name is ${name} and I work at ${company}. I'd like to have some info <generate>",
+          "Dear Sir/Madame, could you give me additional info on <generate>"
+        ]
+      },
+      "Accommodation": {
+        "implemented": true,
+        "output_folder": "info_accommodation",
+        "variables": ["location", "duration"],
+        "additional_info": [
+          "Location: ${location} \n",
+          "Duration of accommodation: ${duration} \n"
+        ],
+        "subject": "Subject: Information request about accommodation at ${location}\n",
+        "templates": [
+          "Dear Sir/Madame, my name is ${name} and I work at ${company}. Could you help me finding <generate>",
+          "Dear Sir/Madame, my name is ${name} and I work at ${company}. I am having trouble finding an accommodation <generate>"
+        ]
+      },
+      "Taxation": {
+        "implemented": false,
+        "output_folder": "",
+        "variables": ["salary"],
+        "additional_info": ["Salary of employee: ${salary} \n"],
+        "subject": "Subject: Information request about taxation \n",
+        "templates": [
+          "Dear Sir/Madame, my name is ${name} and I work at ${company}. I currently earn {salary} and I have a question about taxation <generate>"
+        ]
+      },
+      "Company event": {
+        "implemented": false,
+        "output_folder": "",
+        "variables": [
+          "location_of_event",
+          "name_of_event",
+          "date_of_event",
+          "request"
+        ],
+        "additional_info": ["Location of event: ${location_of_event} \n"],
+        "subject": "Subject: Informtaion request about company's event ${name_of_event} \n",
+        "templates": [
+          "Dear Sir/Madame, I wanted to ask some info about the company's event of ${date_of_event} <generate>"
+        ]
+      }
+    },
+    "Timetable change": {
+      "Shift change": {
+        "implemented": true,
+        "output_folder": "shift_change",
+        "variables": [
+          "reason_of_change",
+          "old_date",
+          "new_date",
+          "old_work_shift",
+          "new_work_shift"
+        ],
+        "additional_info": [
+          "Reason of change: ${reason_of_change} \n",
+          "Current shift: ${old_date} ${old_work_shift} \n",
+          "Requested shift: ${new_date} ${new_work_shift} \n"
+        ],
+        "subject": "Subject: Request of shift change from ${old_date} ${old_work_shift} to ${new_date} ${new_work_shift} because ${reason_of_change}\n",
+        "templates": [
+          "Dear Sir/Madame, my name is ${name} and I work at ${company}. I'd like to change <generate>",
+          "Dear Sir/Madame, my name is ${name} and I work at ${company}. I wanted to <generate>"
+        ]
+      }
+    },
+    "Complaint": {
+      "complaint": {
+        "implemented": true,
+        "output_folder": "complaint",
+        "variables": ["complaint", "to_who"],
+        "additional_info": ["Complaint: Complaint about a ${to_who}  \n"],
+        "subject": "Subject: ${complaint} \n",
+        "templates": [
+          "Dear Sir/Madame, I want to fill an official complaint about <generate> <generate>",
+          "Dear Sir/Madame, I cannot stand anymore <generate> <generate>",
+          "Dear Sir/Madame, I don't want to work anymore with <generate> <generate>"
+        ]
+      }
+    },
+    "Salary": {
+      "Salary raise": {
+        "implemented": true,
+        "output_folder": "salary",
+        "variables": [
+          "work_title",
+          "prev_salary_text",
+          "new_salary_text",
+          "increase_in_percentage"
+        ],
+        "subject": "Subject: Request for salary raise from ${prev_salary_text} to ${new_salary_text} \n",
+        "additional_info": [
+          "Increase in percentage: ${increase_in_percentage} \n",
+          "Work title: ${work_title} \n"
+        ],
+        "templates": [
+          "Dear Sir/Madame, my name is ${name} and I work at ${company}. I want <generate> <generate>",
+          "Dear Sir/Madame, my name is ${name} and I work at ${company}. I want a raise <generate> <generate>",
+          "Dear Sir/Madame, my name is ${name} and I work at ${company}. I think my salary <generate> <generate>"
+        ]
+      },
+      "Change of method of payment": {
+        "implemented": false,
+        "output_folder": "",
+        "variables": ["old_IBAN", "new_IBAN"],
+        "subject": "Subject: Request for change of method of payment \n",
+        "additional_info": [
+          "Old method of payment info: ${old_IBAN} \n",
+          "New method of payment info: ${new_IBAN} \n"
+        ],
+        "templates": [
+          "Dear Sir/Madame, my name is ${name} and I work at ${company}. I'd like to change <generate>",
+          "Dear Sir/Madame, is it possible to <generate>"
+        ]
+      },
+      "Gender pay gap": {
+        "implemented": true,
+        "output_folder": "gender_pay_gap",
+        "variables": ["wage_gap"],
+        "subject": "Subject: Request for explanation for gender pay gap of ${wage_gap} \n",
+        "additional_info": ["Wage gap: ${wage_gap}"],
+        "templates": [
+          "Dear Sir/Madame, I discovered that my male collegues are paid <generate> <generate>",
+          "Dear Sir/Madame, I discovered that my male collegues are paid <generate>. I hope <generate>"
+        ]
+      }
+    },
+    "Life event": {
+      "Health issues": {
+        "implemented": true,
+        "output_folder": "absence",
+        "variables": ["reason", "date_start_absence", "number_of_days"],
+        "additional_info": [
+          "Date start absence: ${date_start_absence} \n",
+          "Reason absence: ${reason} \n"
+        ],
+        "subject": "Subject: Request for sick leave for ${number_of_days}\n",
+        "templates": [
+          "Dear Sir/Madame, my name is ${name}. I am requesting <generate>",
+          "Hello, my name is ${name} and I work at ${company}. I need to take some time off <generate>"
+        ]
+      },
+      "Family issues": {
+        "implemented": false,
+        "output_folder": "",
+        "variables": [
+          "member_of_family",
+          "issue",
+          "number_of_days",
+          "day",
+          "date"
+        ],
+        "additional_info": [
+          "Member of family affected: ${member_of_family} \n",
+          "Issue: ${issue} \n",
+          "Start date: ${date} \n"
+        ],
+        "subject": "Subject: Request for time off for family reasons for ${number_of_days} ${day}. Issue: {issue} \n",
+        "templates": [
+          "Dear Sir/Madame, I need some time off since <generate>",
+          "Dear Sir/Madame, I cannot work because <generate>"
+        ]
+      },
+      "Personal issues": {
+        "implemented": true,
+        "output_folder": "life_event",
+        "variables": ["description_life_event"],
+        "additional_info": [],
+        "subject": "Subject: Request time off ${description_life_event} \n",
+        "templates": [
+          "Dear Sir/Madame, I'd like to have some time off due to <generate>",
+          "Dear Sir/Madame, I'd like to have some time off because <generate>. I think <generate>"
+        ]
+      }
+    },
+    "Technical problem": {
+      "IT_problem": {
+        "implemented": false,
+        "output_folder": "",
+        "variables": ["type_of_problem", "device", "date"],
+        "additional_info": [
+          "Type of problem: ${type_of_problem} \n",
+          "Device affected: ${device} \n",
+          "Start date: ${date} \n"
+        ],
+        "subject": "Subject: Technical help request \n",
+        "templates": [
+          "Dear Sir/Madame, my name is ${name} and I work at ${company}. I am having some problem with <generate>",
+          "Dear Sir/Madame, my name is ${name} and I work at ${company}. My {device} is malfunctioning <generate>"
+        ]
+      },
+      "Account management": {
+        "implemented": false,
+        "output_folder": "",
+        "variables": ["type_of_problem"],
+        "additional_info": ["Type of problem: ${type_of_problem} \n"],
+        "subject": "Subject: Problem with work account \n",
+        "templates": [
+          "Dear Sir/Madame, I'm having some problem with my work account <generate>"
+        ]
+      }
+    },
+    "Refund": {
+      "Refund event": {
+        "implemented": false,
+        "output_folder": "",
+        "variables": ["type_of_event", "place", "date", "price"],
+        "additional_info": [
+          "Type of event: ${type_of_event} \n",
+          "Place of event: ${place} \n",
+          "Date of event: ${date} \n",
+          "Refund requested: ${currency}${price} \n"
+        ],
+        "subject": "Subject: Request of refund for ${type_of_event} of ${currency}${price}\n",
+        "templates": [
+          "Dear Sir/Madame, my name is ${name}. I am writing this mail to ask a refund for <generate>",
+          "Dear Sir/Madame, my name is ${name} and I work at ${company}. Could you <generate>"
+        ]
+      },
+      "Refund restaurant": {
+        "implemented": false,
+        "output_folder": "",
+        "variables": ["location", "date"],
+        "additional_info": ["Location: ${location} \n", "Date: ${date} \n"],
+        "subject": "Subject: Request of refund for dinner at ${location} at ${date}\n",
+        "templates": [
+          "Dear Sir/Madame, my name is ${name}. I am writing this mail to ask a refund for <generate>"
+        ]
+      },
+      "Refund travel": {
+        "implemented": true,
+        "output_folder": "refund_travel",
+        "variables": [
+          "from",
+          "to",
+          "date_travel",
+          "airport_from",
+          "airport_to"
+        ],
+        "additional_info": [
+          "Date Travel: ${date_travel} \n",
+          "From: ${airport_from}, ${from} \n",
+          "Destination: ${airport_to}, ${to} \n"
+        ],
+        "subject": "Subject: Request of refund for plane ticket from ${from} to ${to} at ${date_travel}\n",
+        "templates": [
+          "Dear Sir/Madame, my name is ${name}. I am writing this mail to ask a refund for the travel <generate>",
+          "Dear Sir/Madame, my name is ${name}. Could you reimburse me <generate>"
+        ]
+      }
+    }
+  }
+}

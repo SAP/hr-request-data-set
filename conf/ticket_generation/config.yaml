@@ -1,0 +1,57 @@
+defaults:
+  - ticket_type: absence # type of ticket you want to generate
+  - _self_
+hydra:
+  job:
+    chdir: False
+  sweeper:
+    params:
+      ticket_type: absence,salary,life_event,gender_pay_gap,info_accommodation,complaint,refund_travel,shift_change
+data_creation:
+  number_of_data: 5 # Number of tickets created
+  data_path: "ticket_generation/data" # data folder path where the dataset are stored
+  output_path: "ticket_generation/output"
+  create_only_first_part: False
+gpt:
+  model: "EleutherAI/gpt-j-6B" # GPT Model: Tested with models "EleutherAI/gpt-j-6B" and "gpt2-medium"
+  top_k: 50 # the k most likely next words are filtered and the probability mass is redistributed among only these k words.
+  top_p: 0.85 #  samples from the smallest possible set of words whose cumulative probability exceeds the probability p.
+  repetition_penalty: 1.2 # he parameter for repetition penalty. 1.0 means no penalty
+  temperature: 1 # the value used to module the logits distribution
+  min_length: 0 # minimum amount of words created by a gpt generation
+  word_limit: 50 # maximum amount of words created by a gpt generation
+  length_penalty: 1.0 # `length_penalty` > 0.0 promotes longer sequences, while `length_penalty` < 0.0 encourages shorter sequences.
+  no_repeat_ngram_size: 0 #  If set to int > 0, all ngrams of that size can only occur once.
+  num_beams: 1 # !!! NEEDS TO BE GREATER THAN 1 IF `force_words` ARE NOT EMPTY
+  do_sample: True # !!! NEEDS TO BE FALSE IF `force_words` ARE NOT EMPTY
+  bad_words: "" # List of words separated by commas that are not allowed to be generated.
+  force_words: "" # List of words separated by commas that must be generated.
+gpu:
+  use_gpu: True # True if you want to use the gpu
+  device: "cuda" # device name of your gpu ( ex. "cuda:0" or "cuda" if you want to use more than 1 gpu )
+fine_tune:
+  execute: False
+  train_size: 0.8
+  folder: "enron_mail/maildir/allen-p/_sent_mail" # Support also regex syntax( Ex. enron_mail/maildir/*/_sent_mail)
+  special_tokens:
+    bos_token: "<|endoftext|>"
+    eos_token: "<|endoftext|>"
+    pad_token: "<|pad|>"
+  training_arguments:
+    output_dir: "./results"
+    num_train_epochs: 3
+    per_device_train_batch_size: 2
+    per_device_eval_batch_size: 2
+    warmup_steps: 10
+    weight_decay: 0.05
+    logging_dir: "./logs"
+    logging_steps: 400
+    optim: "adamw_torch"
+topic_model_generation:
+  execute: False
+  gamma: 1
+  logit_threshold: -80
+  topic_index: 0
+  num_topics: 10
+  create_topic_word: True
+  data_path: "ticket_generation/src/text_generator/bert_topic_datasets/data"

@@ -1,0 +1,14 @@
+name: "complaint"
+employee_generator:
+  _target_: ticket_generation.src.employee_generator.EmployeeComplaintGenerator
+df_provider:
+  _target_: ticket_generation.src.df_provider.ComplaintDfProvider
+  number_of_data: -1 # number of data to sample from original dataset (-1 means get all data)
+  shuffle: True # boolean to shuffle or not the data before sampling
+  file_name: "complaints.csv" # file name of the dataset
+  columns: ["to_who", "complaint"] # columns name in the csv
+text_generator:
+  _target_: ticket_generation.src.text_generator.TicketComplaintTextGenerator
+  file_name: "templates.json" # file name of the template json file
+  category: "Complaint" # Must correspond to the keys in the templates.json file
+  sub_category: "complaint" # Must correspond to the keys in the templates.json file

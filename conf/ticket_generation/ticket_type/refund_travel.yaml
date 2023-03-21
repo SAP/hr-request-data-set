@@ -1,0 +1,23 @@
+name: "refund_travel"
+employee_generator:
+  _target_: ticket_generation.src.employee_generator.EmployeeRefundTravelGenerator
+df_provider:
+  _target_: ticket_generation.src.df_provider.RefundTravelDfProvider
+  number_of_data: -1 # number of data to sample from original dataset (-1 means get all data)
+  shuffle: True # boolean to shuffle or not the data before sampling
+  file_name: "flights.csv" # file name of the dataset
+  columns: [
+      "Name_source",
+      "City_source",
+      "Country_source",
+      "ISO_code_source",
+      "Name_dest",
+      "City_dest",
+      "Country_dest",
+      "ISO_code_dest",
+    ] # columns name in the csv
+text_generator:
+  _target_: ticket_generation.src.text_generator.TicketRefundTravelTextGenerator
+  file_name: "templates.json" # file name of the template json file
+  category: "Refund" # Must correspond to the keys in the templates.json file
+  sub_category: "Refund travel" # Must correspond to the keys in the templates.json file

@@ -1,0 +1,14 @@
+name: "life_event"
+employee_generator:
+  _target_: ticket_generation.src.employee_generator.EmployeeLifeEventGenerator
+df_provider:
+  _target_: ticket_generation.src.df_provider.LifeEventDfProvider
+  number_of_data: -1 # number of data to sample from original dataset (-1 means get all data)
+  shuffle: True # boolean to shuffle or not the data before sampling
+  file_name: "life_events.csv" # file name of the dataset
+  columns: ["Event", "Description"] # columns name in the csv
+text_generator:
+  _target_: ticket_generation.src.text_generator.TicketLifeEventTextGenerator
+  file_name: "templates.json" # file name of the template json file
+  category: "Life event" # Must correspond to the keys in the templates.json file
+  sub_category: "Personal issues" # Must correspond to the keys in the templates.json file

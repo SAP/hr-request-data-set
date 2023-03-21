@@ -1,0 +1,17 @@
+hydra:
+  job:
+    chdir: False
+data_path:
+  data_path_survey: "ticket_generation/data/survey_tickets"
+  data_path_amazon_reviews: "ticket_generation/data/amazon_reviews"
+  data_path_reddit_comments: "ticket_generation/data/reddit_comments"
+  data_path_nips_papers: "ticket_generation/data/nips_papers"
+ticket_dataset:
+  data_path: "ticket_generation/output"
+  template_path: "ticket_generation/data/templates"
+  template_file_name: "templates.json"
+  sample_size: 1.0 # Must be between 0 and 1, percentage of dataset used
+  remove_first_part: True
+  remove_template_sections: False
+  filter_tickets_by_file_name: "2022_11_16" # If passed by command line and if it contains undersocres it must be surrounded by '', like this: 'ticket_dataset.filter_tickets_by_file_name="2022_09_15"'
+

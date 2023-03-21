@@ -1,0 +1,54 @@
+hydra:
+  job:
+    chdir: False
+gpu:
+  use_gpu: True
+  device: "cuda:0"
+model_name: "bert-base-uncased"
+classification_model: "BERT" # MUST BE "fasttext" or "BERT"
+ticket_dataset:
+  data_path: "ticket_generation/output"
+  template_path: "ticket_generation/data/templates"
+  template_file_name: "templates.json"
+  sample_size: 1.0 # Must be between 0 and 1, percentage of dataset used
+  remove_first_part: True
+  remove_template_sections: False
+  filter_tickets_by_file_name: "2022_11_16" # If passed by command line and if it contains undersocres it must be surrounded by '', like this: 'ticket_dataset.filter_tickets_by_file_name="2022_09_15"'
+train_size: 0.70 # Sum of train_size, validation_size and test_size must be equal to 1s
+validation_size: 0.15
+test_size: 0.15
+explanation:
+  execute: True
+  top_n: 5
+training_args_bert:
+  output_dir: "./results" # output directory
+  num_train_epochs: 3 # total number of training epochs
+  per_device_train_batch_size: 8 # batch size per device during training
+  per_device_eval_batch_size: 8 # batch size for evaluation
+  warmup_steps: 500 # number of warmup steps for learning rate scheduler
+  learning_rate: 5e-05 # The initial learning rate for [`AdamW`] optimizer.
+  weight_decay: 0.01 # strength of weight decay
+  logging_dir: "./logs" # directory for storing logs
+  load_best_model_at_end: True # load the best model when finished training (default metric is loss)
+  logging_steps: 1000 # log & save weights each logging_steps
+  save_steps: 1000
+  evaluation_strategy: "steps" # evaluate each `logging_steps`
+training_args_fasttext:
+  ws: 5
+  epoch: 20
+  minCount: 1
+  minCountLabel: 0
+  minn: 0
+  maxn: 0
+  neg: 5
+  wordNgrams: 3
+  loss: "softmax"
+  bucket: 2000000
+  thread: 12
+  lr: 0.5
+  lrUpdateRate: 100
+  t: 0.0001
+  label: "__label__"
+  verbose: 5
+output_path: "use_cases/ticket_classification/output"
+display_predicted_wrong: False

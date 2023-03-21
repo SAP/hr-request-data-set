@@ -1,0 +1,19 @@
+name: "absence"
+employee_generator:
+  _target_: ticket_generation.src.employee_generator.EmployeeAbsenceGenerator
+  pseudo_counts: 0.01
+df_provider:
+  _target_: ticket_generation.src.df_provider.AbsenteeismDfProvider
+  number_of_data: -1 # number of data to sample from original dataset (-1 means get all data)
+  shuffle: True # boolean to shuffle or not the data before sampling
+  file_name: "Absenteeism_at_work.csv" #  file name of the dataset
+  columns: [
+      "Reason_for_absence",
+      "Month_of_absence",
+      "Absenteeism_time_in_hours",
+    ] # columns name in the csv
+text_generator:
+  _target_: ticket_generation.src.text_generator.TicketAbsenceTextGenerator
+  file_name: "templates.json" # file name of the template json file
+  category: "Life event" # Must correspond to the keys in the templates.json file
+  sub_category: "Health issues" # Must correspond to the keys in the templates.json file

@@ -1,0 +1,352 @@
+[
+  {
+    "id": 0,
+    "ticket": "Hello, I would like to stay home the 2nd of August for a medical consultation. Is it possible?",
+    "label": "Life event_Health issues"
+  },
+  {
+    "id": 1,
+    "ticket": "Dear Amelie, I would like to take a vacation day the next Monday for a visit to the hospital, could you handle it? Thank you in advance",
+    "label": "Life event_Health issues"
+  },
+  {
+    "id": 2,
+    "ticket": "Dear Mark, tomorrow I cannot come to work because I don't feel too well, can I take the day off?",
+    "label": "Life event_Health issues"
+  },
+  {
+    "id": 3,
+    "ticket": "Hi, I would like to take two days off the first week of Avril. Best regards, John",
+    "label": "Life event_Health issues"
+  },
+  {
+    "id": 4,
+    "ticket": "Dear Sir/Madame, I am positive to COVID and I cannot come to work for the next days. I don't exactly know when I will be able to return to work. Aaron",
+    "label": "Life event_Health issues"
+  },
+  {
+    "id": 5,
+    "ticket": "I want to take the day off on the first day of next week for an heart operation . If it is an issue please let me know, Fred",
+    "label": "Life event_Health issues"
+  },
+  {
+    "id": 6,
+    "ticket": "Could I stay at home next Monday? I have a visit to the doctor that I cannot reschedule. Can this create any problem to anyone in the office? ",
+    "label": "Life event_Health issues"
+  },
+  {
+    "id": 7,
+    "ticket": "Dear Sir/Madame, next week I have an operation at the hospital so I won't be able to come to the office form Monday to Thursday. Thanks in advance for taking care of my request, Matthew",
+    "label": "Life event_Health issues"
+  },
+  {
+    "id": 8,
+    "ticket": "Dear Anne, I would like to have the day off on the 10/10/2021 for medical reasons. Best regards, Gabriel",
+    "label": "Life event_Health issues"
+  },
+  {
+    "id": 9,
+    "ticket": "I cannot come to work tomorrow because yesterday I had an accident and right now I am at the hospital. I feel well, but I would like to take at least two days off. Best regards, Thomas",
+    "label": "Life event_Health issues"
+  },
+  {
+    "id": 10,
+    "ticket": "Dear Madame, I would like to take the morning off on the 03/05 for a dental visit, could you take care of the request? Thanks very much, Mark",
+    "label": "Life event_Health issues"
+  },
+  {
+    "id": 11,
+    "ticket": "Dear Mark, I believe that I deserve a salary raise for how many hours I'm working each week",
+    "label": "Salary_Salary raise"
+  },
+  {
+    "id": 12,
+    "ticket": "I think I well earned an increase of salary of atleast the 10% because of my loyalty to the company. Best regards, Max",
+    "label": "Salary_Salary raise"
+  },
+  {
+    "id": 13,
+    "ticket": "Hello, I'm writing this mail to request a pay raise of 8% due to the uprising inflation over the last few months",
+    "label": "Salary_Salary raise"
+  },
+  {
+    "id": 14,
+    "ticket": "Dear William, I think my salary is a little bit lower compared to the industry standard. Could we set up a meeting to talk about this?",
+    "label": "Salary_Salary raise"
+  },
+  {
+    "id": 15,
+    "ticket": "Hi Charles, during the last few months my responsibilities have been increasing, but my salary is still the same as when I joined the company. If it remain the same I could start looking out for different options...",
+    "label": "Salary_Salary raise"
+  },
+  {
+    "id": 16,
+    "ticket": "Dear Kevin, I'd like a wage raise to $50,000 gross, which I think has been due for a lot of time",
+    "label": "Salary_Salary raise"
+  },
+  {
+    "id": 17,
+    "ticket": "Dear George, could you put a good word during the annual meeting about the salary raise we discussed last week? Thanks, Pam",
+    "label": "Salary_Salary raise"
+  },
+  {
+    "id": 18,
+    "ticket": "I believe that I'm not earning what I deserve and if the situation does not change I could leave the company very soon",
+    "label": "Salary_Salary raise"
+  },
+  {
+    "id": 19,
+    "ticket": "Dear Patrick, I write this email to officially request a raise of at least the 20% not negotiable ",
+    "label": "Salary_Salary raise"
+  },
+  {
+    "id": 20,
+    "ticket": "Hello, I want the wage increase which was promised to me before the start of next semester. I know the company can afford it, and I know that new hires receive almost the same compensation as me. Let me know, Noah",
+    "label": "Salary_Salary raise"
+  },
+  {
+    "id": 21,
+    "ticket": "Dear Mark, I've just discovered that John has an higher salary than mine even if we have the same responsibilities. Could I receive an explanation?",
+    "label": "Salary_Gender pay gap"
+  },
+  {
+    "id": 22,
+    "ticket": "Dear HR, after an anonymous poll we discovered that male collegues are in average paid the 15% more than their female counterparts. This is unacceptable!",
+    "label": "Salary_Gender pay gap"
+  },
+  {
+    "id": 23,
+    "ticket": "Why females are paid considerably less than males in our office? If this situation isn't solved by next month I will officially report it ",
+    "label": "Salary_Gender pay gap"
+  },
+  {
+    "id": 24,
+    "ticket": "Can you explain why I'm being paid less than Ralph? I sincerly cannot understand the reasoning behind this decision",
+    "label": "Salary_Gender pay gap"
+  },
+  {
+    "id": 25,
+    "ticket": "I discovered that there is a considerably large gender wage gap in our office and this is outrageous in 2020!",
+    "label": "Salary_Gender pay gap"
+  },
+  {
+    "id": 26,
+    "ticket": "Dear Sir, I noticed looking at George's paycheck that he is being given more bonuses than me. Could I have an explanation?",
+    "label": "Salary_Gender pay gap"
+  },
+  {
+    "id": 27,
+    "ticket": "Hi, I discovered that my male collegues are paid more than me and this is an unfair situation which can lead to legal consequences",
+    "label": "Salary_Gender pay gap"
+  },
+  {
+    "id": 28,
+    "ticket": "I want to make it known that my male colleagues have been given more benefits than me, withhout any particular reason",
+    "label": "Salary_Gender pay gap"
+  },
+  {
+    "id": 29,
+    "ticket": "Can I know why Colin is paid the 5% more than me? Best regards, Julie",
+    "label": "Salary_Gender pay gap"
+  },
+  {
+    "id": 30,
+    "ticket": "Dear Sir/Madame, I'd like to take a vacation from the 20th of July to the 2nd of August. Is there any problem? Best regards, Frank",
+    "label": "Life event_Personal issues"
+  },
+  {
+    "id": 31,
+    "ticket": "Is it a problem if I take the next week off? It has been a while since I haven't been on vacation, so I hope this won't create any problem to the team. Thomas",
+    "label": "Life event_Personal issues"
+  },
+  {
+    "id": 32,
+    "ticket": "Dear George, yesterday one of close relatives passed away and this morning there is the funeral, so I would like to take today off. I hope you understand, Joffrey",
+    "label": "Life event_Personal issues"
+  },
+  {
+    "id": 33,
+    "ticket": "Dear Sir/Madame, next week there is the gruaduation of my son on Wednesday, so I would like to take thaday off. Best regards, Patrick",
+    "label": "Life event_Personal issues"
+  },
+  {
+    "id": 34,
+    "ticket": "Dear Anne, I recently divorced from my husband and I would like to take some time off to straighten my head. I accumulated many vacation days so it shouldn't be an issue. Kind regards, Laura",
+    "label": "Life event_Personal issues"
+  },
+  {
+    "id": 35,
+    "ticket": "Hello, This night there has been an attempted robbery at my house, and I have to go to the police this morning. I hope it is not a problem if today I don,t come to the office, Julian",
+    "label": "Life event_Personal issues"
+  },
+  {
+    "id": 36,
+    "ticket": "Dear Madame, during this period I'm moving house and it's taking more time than expected. Can I take tomorrow off?",
+    "label": "Life event_Personal issues"
+  },
+  {
+    "id": 37,
+    "ticket": "Dear Sir, next week on the 20/10/2022 I have an university exam so I won't be able to come to work. I hope it's not an issue. Thanks in advance, Sophia",
+    "label": "Life event_Personal issues"
+  },
+  {
+    "id": 38,
+    "ticket": "Dear John, recently a close friend passed away and I am not feeling really good mentally. I would like to take some days off if there aren't any issues",
+    "label": "Life event_Personal issues"
+  },
+  {
+    "id": 39,
+    "ticket": "Dear Raymond, this week I am reuniting with my family after a long time, so I would like to take tomorrow and the day after as vacation days. Best regards, Addison",
+    "label": "Life event_Personal issues"
+  },
+  {
+    "id": 40,
+    "ticket": "Dear HR, Jason has been doing comments about my religion that makes me uncomfortable. Could you have a talk with him?",
+    "label": "Complaint_complaint"
+  },
+  {
+    "id": 41,
+    "ticket": "Dear Emma, I am fed up with Jeffrey, he is creating a toxic work environment",
+    "label": "Complaint_complaint"
+  },
+  {
+    "id": 42,
+    "ticket": "Dear Jerry, I would like to discuss with someone about the roles problem that there is in the office right now. It is impossible to understand each others duties without well defined roles and it's not a new problem",
+    "label": "Complaint_complaint"
+  },
+  {
+    "id": 43,
+    "ticket": "Dear HR, i want to report a racist accident in which my supervisor was involved. I don't want to be too specific before any investigation is done, but I hope there will be some repercussions",
+    "label": "Complaint_complaint"
+  },
+  {
+    "id": 44,
+    "ticket": "Dear Madame, I want to report that Mark has used a derogatory term talking about me. If you need it,I have proofs",
+    "label": "Complaint_complaint"
+  },
+  {
+    "id": 45,
+    "ticket": "Dear Sir, I cannot believe that I cannot come to work because of my disability. I believe that the company should be more concerned about the issues that people in my condition can face. Best, Caroline",
+    "label": "Complaint_complaint"
+  },
+  {
+    "id": 46,
+    "ticket": "Dear Tyler, I think that in the office older people are discriminated because of our age by some young people. They don't include us during reunions and they don't share any info with us",
+    "label": "Complaint_complaint"
+  },
+  {
+    "id": 47,
+    "ticket": "Dear Janet, I want to report that yesterday, during the company's event I was touched without my consent by a company's director. I expect that this person will be fired, there isn't any other possible end to this story. Hannah",
+    "label": "Complaint_complaint"
+  },
+  {
+    "id": 48,
+    "ticket": "Dear Sir, today I saw a collegue with some substance that could be illegal, what do you suggest I do? Who I should report this to?",
+    "label": "Complaint_complaint"
+  },
+  {
+    "id": 49,
+    "ticket": "Hello, lately I heard some collegues making fun of me because of my accent and nationality. This isn't what I expected from this company",
+    "label": "Complaint_complaint"
+  },
+  {
+    "id": 50,
+    "ticket": "Dear Sir, I would like to have a refund for the plane ticket to Mallorca I bought to go to the EMNLP conference. The ticket costed $143",
+    "label": "Refund_Refund travel"
+  },
+  {
+    "id": 51,
+    "ticket": "Hello, I would like to receive a refund for the travel from Nice to London of last week. More details in the attached file",
+    "label": "Refund_Refund travel"
+  },
+  {
+    "id": 52,
+    "ticket": "Dear Sean, I would like to be reimboursed for the last week's travel",
+    "label": "Refund_Refund travel"
+  },
+  {
+    "id": 53,
+    "ticket": "Dear Madame, I am writing this mail to ask a refund for the travel I bought with my own money",
+    "label": "Refund_Refund travel"
+  },
+  {
+    "id": 54,
+    "ticket": "Hello, when will I receive the $848 for the flight?",
+    "label": "Refund_Refund travel"
+  },
+  {
+    "id": 55,
+    "ticket": "Hi, I would like to receive the money I'm owed for the hotel accommodation and the travel before next week. Best, Brittney",
+    "label": "Refund_Refund travel"
+  },
+  {
+    "id": 56,
+    "ticket": "Dear Madame, I am writing this mail to ask a refund for the travel I have booked last month. If you need them I can provide the receipts",
+    "label": "Refund_Refund travel"
+  },
+  {
+    "id": 57,
+    "ticket": "Hi, I need to refund for the travel from Philadelphia to New York on the 18/07/2016, which amounted to $234.12. I can send you again my personal bank account info again if you need them. Let me know if there are any problems, Karl",
+    "label": "Refund_Refund travel"
+  },
+  {
+    "id": 58,
+    "ticket": "Dear Amber, I took a plane for a company's event on the 02/10/2022, I would like to be refunded if possible",
+    "label": "Refund_Refund travel"
+  },
+  {
+    "id": 59,
+    "ticket": "Helloo, can I have a refund for the ticket from Paris to Marseille?",
+    "label": "Refund_Refund travel"
+  },
+  {
+    "id": 60,
+    "ticket": "Dear Sir, I will move to the new office the next month, but I still havent't been able to find an accommodation. Do you hav any advice?",
+    "label": "Ask information_Accommodation"
+  },
+  {
+    "id": 61,
+    "ticket": "Dear Madame, I cannot find a place to saty for our transfert. Could you book me an hotel? The location is irrelevant for me",
+    "label": "Ask information_Accommodation"
+  },
+  {
+    "id": 62,
+    "ticket": "Hello, I am having trouble finding a place to stay in Munich. Could you give me an help, please?",
+    "label": "Ask information_Accommodation"
+  },
+  {
+    "id": 63,
+    "ticket": "Dear Sir, could you help me finding accommodations in Nice for the period July - September",
+    "label": "Ask information_Accommodation"
+  },
+  {
+    "id": 64,
+    "ticket": "Dear Logan, I need somewhere to live for the period April-June 2018. Do you have any suggestions",
+    "label": "Ask information_Accommodation"
+  },
+  {
+    "id": 65,
+    "ticket": "Dear HR, do you provide any accommodations with the contract? If yes, is it included in the salary or is it deducted from it?",
+    "label": "Ask information_Accommodation"
+  },
+  {
+    "id": 66,
+    "ticket": "Dear Roy, what are the best websites to find a safe location where to live? Best, Danielle",
+    "label": "Ask information_Accommodation"
+  },
+  {
+    "id": 67,
+    "ticket": "Hello, which are the best neighborhood to rent an house near the office? Thay should have public transportation because I don't have a car at the moment. Thanks in advance for the help, Louie",
+    "label": "Ask information_Accommodation"
+  },
+  {
+    "id": 68,
+    "ticket": "Dear Sir/Madame, could you tell me which are the best hotels in the city center of Brussels?",
+    "label": "Ask information_Accommodation"
+  },
+  {
+    "id": 69,
+    "ticket": "Dear Alice, does the company give any help finding an accommodation for new hires? Thanks in advance for the help, Antoine",
+    "label": "Ask information_Accommodation"
+  }
+]

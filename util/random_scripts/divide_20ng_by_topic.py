@@ -1,0 +1,204 @@
+from collections import defaultdict
+from datetime import datetime
+
+import numpy as np
+import pandas as pd
+from bertopic import BERTopic
+from sklearn.datasets import fetch_20newsgroups
+from tqdm import tqdm
+
+# def strip_newsgroup_header(text):
+#     """
+#     Given text in "news" format, strip the headers, by removing everything
+#     before the first blank line.
+#     Parameters
+#     ----------
+#     text : str
+#         The text from which to remove the signature block.
+#     """
+#     _before, _blankline, after = text.partition("\n\n")
+#     return after
+
+
+# def strip_newsgroup_quoting(text):
+#     """
+#     Given text in "news" format, strip lines beginning with the quote
+#     characters > or |, plus lines that often introduce a quoted section
+#     (for example, because they contain the string 'writes:'.)
+#     Parameters
+#     ----------
+#     text : str
+#         The text from which to remove the signature block.
+#     """
+#     _QUOTE_RE = re.compile(r"(writes in|writes:|wrote:|says:|said:" r"|^In article|^Quoted from|^\||^>)")
+
+#     good_lines = [line for line in text.split("\n") if not _QUOTE_RE.search(line)]
+#     return "\n".join(good_lines)
+
+
+# def strip_newsgroup_footer(text):
+#     """
+#     Given text in "news" format, attempt to remove a signature block.
+#     As a rough heuristic, we assume that signatures are set apart by either
+#     a blank line or a line made of hyphens, and that it is the last such line
+#     in the file (disregarding blank lines at the end).
+#     Parameters
+#     ----------
+#     text : str
+#         The text from which to remove the signature block.
+#     """
+#     lines = text.strip().split("\n")
+#     for line_num in range(len(lines) - 1, -1, -1):
+#         line = lines[line_num]
+#         if line.strip().strip("-") == "":
+#             break
+
+#     if line_num > 0:
+#         return "\n".join(lines[:line_num])
+#     else:
+#         return text
+
+
+# def preprocess():
+
+#     print("START")
+#     data = []
+#     file_names = []
+
+#     for path, _, files in os.walk("ticket_generation/data/20_newsgroups/"):
+#         for name in tqdm(files):
+#             file_name = f"{path}/{name}"
+#             file_names.append(file_name)
+
+#             if ".txt" in file_name:
+#                 with open(file_name, encoding="utf8", errors="ignore", mode="r+") as f:
+#                     file_data = f.read()
+#                     file_data = strip_newsgroup_header(file_data)
+#                     file_data = strip_newsgroup_quoting(file_data)
+#                     file_data = strip_newsgroup_footer(file_data)
+
+#                     f.write(file_data)
+
+#                     data.append(file_data)
+
+#     return file_names, data
+
+
+def save_models(data, file_names):
+
+    topic_model = BERTopic(language="english", calculate_probabilities=True, verbose=True)
+    topics, probs = topic_model.fit_transform(data)
+
+    _time = datetime.today().strftime("%Y_%m_%d_%H_%M")
+    _data_path = "ticket_generation/data/20_newsgroups"
+
+    topic_model.save(f"{_data_path}/my_model_{_time}")
+
+    freq = topic_model.get_topic_info()
+    freq.to_csv(f"{_data_path}/freq_{_time}.csv")
+
+    probs_df = pd.DataFrame(probs)
+    probs_df["file_names"] = file_names
+
+    probs_df.to_csv(f"{_data_path}/probs_{_time}.csv")
+
+    print(type(freq))
+    print(freq)
+
+    print(topics)
+
+
+def divide_dataset(data_df):
+    religion = {
+        12: "12_atheists_god_atheism_atheist",
+        26: "16_hell_god_eternal_jesus",
+        21: "21_islam_quran_islamic_rushdie",
+        70: "70_existence_evolution_exist_god",
+        77: "77_ra_satan_god_thou",
+        99: "99_pope_church_schism_orthodox",
+        146: "146_religion_motivated_religously_religiously",
+        192: "191_cancer_burzynskis_a10_tumor",
+    }
+    health_issue = {
+        15: "15_health_tobacco_cesarean_smokeless",
+        20: "20_pain_migraine_drug_cancer",
+        39: "39_candida_yeast_infection_infections",
+        73: "73_insurance_geico_car_accident",
+        85: "85_alzheimers_medical_disease_medicine",
+        112: "112_cancer_medical_center_centers",
+        138: "138_polio_patients_postpolio_muscle",
+    }
+    lgbt = {
+        27: "27_kinsey_sex_men_homosexual",
+        31: "31_homosexuality_homosexual_paul_homosexuals",
+        107: "107_sexual_enviroleague_gay_homosexuals",
+    }
+    drugs = {64: "64_drugs_drug_cocaine_marijuana", 211: "211_prozac_zoloft_effects_serotonin"}
+    race = {29: "29_blacks_penalty_death_punishment"}
+
+    topics = {"religion": religion, "health_issue": health_issue, "lgbt": lgbt, "drugs": drugs, "race": race}
+
+    data_path = "ticket_generation/data/20_newsgroups"
+    probs_df = pd.read_csv(f"{data_path}/probs.csv", index_col=0)
+    freq = pd.read_csv(f"{data_path}/freq.csv", index_col=0)
+
+    # delete unknown topic
+    freq = freq.iloc[1:, :]
+
+    # reset index
+    freq = freq.reset_index(drop=True)
+
+    # argsort by highest prob for each document
+    indices_top_topics = probs_df.iloc[:, :-1].values.argsort(axis=1)
+
+    # get top_n prob indeces for each document
+    top_n = 3
+    indices_top_topics = indices_top_topics[:, -top_n:]
+
+    file_names = probs_df.iloc[:, -1]
+
+    documents = defaultdict(list)
+
+    # For every document top probability, I look if they are in the topics keys list
+    # If yes, I save the document for the given topic
+    for indice_top_topics, file_name in zip(indices_top_topics, file_names):
+        for key in topics:
+            if np.any(np.in1d(indice_top_topics, np.array(list(topics[key].keys())))):
+                documents[key].append(file_name)
+
+    # save in separated folder the new topics
+    for key in documents:
+        for file_path in tqdm(documents[key]):
+            # src = f'{data_path}/{"/".join(file_path.split("/")[-2:])}.txt'
+
+            file = data_df.loc[data_df["filename"].str.contains(file_path.split("/")[-1])]
+            file = file.iloc[0]["text"]
+
+            file_name = file_path.split("/")[-1]
+            dst = f"{data_path}/{key}/{file_name}.txt"
+            # shutil.copyfile(src, dst)
+            with open(dst, "w") as f:
+                f.write(file)
+
+
+if __name__ == "__main__":
+    twenty_ng = fetch_20newsgroups(
+        data_home="ticket_generation/data/20_newsgroups/20_ng_cache",
+        subset="all",
+        remove=("headers", "footers", "quotes"),
+    )
+    data = twenty_ng["data"]
+    file_names = twenty_ng["filenames"]
+
+    file_names = list(file_names)
+
+    save_models(data, file_names)
+
+    data_df = pd.DataFrame(
+        {
+            "text": data,
+            "filename": file_names,
+        }
+    )
+
+    # divide_dataset(data_df)

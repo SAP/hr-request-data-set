@@ -1,0 +1,13 @@
+FROM python:3.9.7-slim-bullseye
+
+RUN apt-get -qq update &&  apt-get install --no-install-recommends -y build-essential
+
+WORKDIR /app
+COPY ./use_cases/ticket_classification/requirements_classification.txt /app/requirements_classification.txt
+RUN pip install -r requirements_classification.txt
+COPY . /app
+
+ENV NVIDIA_VISIBLE_DEVICES all
+ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
+
+ENTRYPOINT ["python","run_ticket_classification.py"]
