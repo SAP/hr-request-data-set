@@ -1,5 +1,7 @@
 # HR request data set
 
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP/hr-request-data-set)](https://api.reuse.software/info/github.com/SAP/hr-request-data-set)
+
 The objective of this project is to generate synthetic tickets sent from employees to the HR department. The goal is not to create tickets that are recognizable from real ones, but to create a dataset that can be used for training Machine Learning models respecting the GDPR.
 The tickets are created starting from real open data, which is generalized to respect privacy.
 
