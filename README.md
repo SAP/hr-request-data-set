@@ -162,6 +162,8 @@ List of dataset used in the project:
 - [OpenFlights Database](https://openflights.org/data.html)
 - [Geonames all cities with a population over 1000](https://public.opendatasoft.com/explore/dataset/geonames-all-cities-with-a-population-1000/information/?disjunctive.cou_name_en&sort=name)
 
+## Updates
+- Updated github settings and policies
 
 ## Support, Feedback, Contributing
 
